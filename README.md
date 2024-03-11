@@ -1,7 +1,7 @@
 # Ansible
-Ansible Lab
+This is the public facing Ansible Lab for Patrick
 
-
-Test 1234
-
-Wow we updated it
+There are three RHEL Linux servers as test servers for Ansible:
+kira
+wyatt
+natalie
