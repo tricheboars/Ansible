@@ -6,4 +6,4 @@
 
   - name: install bash-completion cause its real nice
     dnf:
-      name: ['nmap-ncat', 'curl', 'rsync', 'sysstat', 'bind-utils', 'wget', 'bash-completion', 'mlocate', 'lsof', 'python2-psutil', 'yum-utils', 'ps_mem' ]
+      name: ['nmap-ncat', 'curl', 'rsync', 'sysstat', 'bind-utils', 'wget', 'bash-completion', 'mlocate', 'lsof', 'yum-utils', 'ps_mem' ]
