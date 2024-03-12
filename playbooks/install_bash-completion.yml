@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install bash-completion cause its real nice
+    dnf:
+      name: bash-completion

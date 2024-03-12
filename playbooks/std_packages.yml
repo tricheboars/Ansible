@@ -1,0 +1,14 @@
+---
+- import_playbook: enable_epel.yml
+- hosts: all
+  gather_facts: false
+  become: true
+  strategy: free
+  tasks:
+
+  #RHEL based OS version 9 stuff
+  - name: Packages major_version 9
+    when: ansible_facts['distribution_major_version'] == "9"
+    package:
+      name: ['nmap-ncat', 'curl', 'rsync', 'sysstat', 'bind-utils', 'wget', 'bash-completion', 'mlocate', 'lsof', 'htop', 'sharutils', 'python2-psutil', 'yum-utils', 'ps_mem' ]
+      state: present
