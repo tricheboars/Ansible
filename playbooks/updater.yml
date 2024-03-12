@@ -16,11 +16,6 @@
       suffix: "_reboot_required"
       register: reboot_file
 
-  - name: Update package cache
-    ansible.builtin.yum:
-      name: "*"
-      state: latest
-
   - name: Set fact for reboot if required after updates
     set_fact:
       reboot_required: "{{ reboot_file.path is defined }}"
