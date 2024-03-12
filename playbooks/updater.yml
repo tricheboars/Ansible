@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update! be secure!
+    dnf:
+      update_cache: yes
+
+      
