@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install bash-completion cause its real nice
+    dnf:
+      name: ['nmap-ncat', 'curl', 'rsync', 'sysstat', 'bind-utils', 'wget', 'bash-completion', 'mlocate', 'lsof', 'htop', 'sharutils', 'python2-psutil', 'yum-utils', 'ps_mem' ]
