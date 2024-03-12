@@ -7,3 +7,5 @@
   - name: update! be secure!
     dnf:
       update_cache: yes
+      name: "*"
+      state: latest
