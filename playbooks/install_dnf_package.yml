@@ -6,4 +6,5 @@
 
   - name: install an array of packages cause its real nice and were automating shit!
     dnf:
-      name: ['nmap-ncat', 'curl', 'rsync', 'sysstat', 'bind-utils', 'wget', 'bash-completion', 'mlocate', 'lsof', 'yum-utils', 'ps_mem' ]
+      name: ['nmap-ncat', 'curl', 'rsync', 'sysstat', 'bind-utils', 'wget', 'bash-completion', 'mlocate', 'lsof', 'yum-utils', 'ps_mem']
+      state: latest
