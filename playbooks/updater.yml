@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+- hosts: rhel
   become: true
   tasks:
 
@@ -9,3 +9,26 @@
       update_cache: yes
       name: "*"
       state: latest
+
+  - name: Create a temporary file for tracking updates
+    ansible.builtin.tempfile:
+      state: file
+      suffix: "_reboot_required"
+      register: reboot_file
+
+  - name: Update package cache
+    ansible.builtin.yum:
+      name: "*"
+      state: latest
+
+  - name: Set fact for reboot if required after updates
+    set_fact:
+      reboot_required: "{{ reboot_file.path is defined }}"
+
+  handlers:
+  - name: Reboot if required
+    reboot:
+    when: reboot_required
+
+  vars:
+    reboot_file_path: "{{ reboot_file.path | default(omit) }}"
