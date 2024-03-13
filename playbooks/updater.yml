@@ -14,7 +14,6 @@
     ansible.builtin.tempfile:
       state: file
       suffix: "_reboot_required"
-      register: reboot_file
 
   - name: Set fact for reboot if required after updates
     set_fact:
